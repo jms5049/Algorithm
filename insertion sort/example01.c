@@ -35,6 +35,31 @@ void insertNode(person *newPerson, int score) {
 	newNode->next = current;
 	
 }
+
+struct person* createNode( char* id, int score) {
+	person *newPerson = (person *)malloc(sizeof(person));
+	strncpy(newPerson->id, id, 10); 
+	newPerson->score = score;		
+	newPerson->prev = NULL;			
+	newPerson->next = NULL;			
+
+	
+	return newPerson;
+}
+
+void printNode() {
+	int i;
+	person *current;
+	current = head;
+	for (current = current->next; current != tail; current = current->next) {
+		printf("%s %d",current->id, current->score);
+
+		puts("");
+	}
+	
+
+}
+
 void main() {
 
 	char id[10];

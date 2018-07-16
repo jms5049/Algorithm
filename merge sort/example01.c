@@ -47,3 +47,33 @@ void mergeSort(int arrayM[], int left, int right)
 	}
 
 }
+
+void merge(int arrayM[], int left, int mid, int right)
+{
+	int *array_left, *array_right;
+	int n1, n2, i, j, k;
+
+	n1 = mid - left + 1;
+	array_left = (int*)malloc(sizeof(int)*n1);
+
+	n2 = right - mid;
+	array_right = (int*)malloc(sizeof(int)*n2);
+
+	for (i = 0; i<n1; i++)
+		array_left[i] = arrayM[left + i];
+
+	for (j = 0; j<n2; j++)
+		array_right[j] = arrayM[mid + j + 1];
+
+	array_left[i] = INT_MAX;
+	array_right[j] = INT_MAX;
+
+	i = 0;
+	j = 0;
+	for (k = left; k <= right; k++) {
+		if (array_left[i] <= array_right[j])
+			arrayM[k] = array_left[i++];
+		else
+			arrayM[k] = array_right[j++];
+	}
+}

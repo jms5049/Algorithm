@@ -34,3 +34,16 @@ int main()
 	free(arrayM);
 	return 0;
 }
+
+
+void mergeSort(int arrayM[], int left, int right)
+{
+	int mid;
+	if (left<right) {
+		mid = (left + right) / 2;
+		mergeSort(arrayM, left, mid);
+		mergeSort(arrayM, mid + 1, right);
+		merge(arrayM, left, mid, right);
+	}
+
+}

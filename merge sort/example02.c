@@ -48,3 +48,49 @@ void mergeSort(int arrayM[], int count)
 		}
 	}
 }
+void merge(int arrayM[], int left, int mid, int right)
+{
+	int i, j, k;
+	int n1 = mid - left + 1;
+	int n2 = right - mid;
+
+	int *Larray;	
+	int *Rarray;	
+	Larray = (int *)malloc(sizeof(int) * n1);
+	Rarray = (int *)malloc(sizeof(int) * n2);
+
+	for (i = 0; i < n1; i++)
+		Larray[i] = arrayM[left + i];
+	for (j = 0; j < n2; j++)
+		Rarray[j] = arrayM[mid + 1 + j];
+
+	i = 0;	
+	j = 0;	
+	k = left;
+
+	for (i, j; i < n1 && j < n2;) {
+		
+		if (Larray[i] <= Rarray[j])
+		{
+			arrayM[k] = Larray[i];
+			i++;
+		}
+		else
+		{
+			arrayM[k] = Rarray[j];
+			j++;
+		}
+		k++;
+
+	}
+
+	for (i; i < n1; i++) {
+		arrayM[k] = Larray[i];
+		k++;
+	}
+	for (j; j < n2; j++){
+		arrayM[k] = Rarray[j];
+		k++;
+	}
+
+}

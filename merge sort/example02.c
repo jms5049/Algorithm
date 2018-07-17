@@ -31,3 +31,20 @@ int main()
 
 	return 0;
 }
+
+void mergeSort(int arrayM[], int count)
+{
+	int arraySize;		
+	int leftHead;		
+
+	for (arraySize = 1; arraySize <= count - 1; arraySize = 2 * arraySize)
+	{
+		
+		for (leftHead = 0; leftHead<count - 1; leftHead = leftHead + 2 * arraySize)
+		{
+			int mid = leftHead + arraySize - 1;
+			int rightTail = min(leftHead + 2 * arraySize - 1, count - 1);
+			merge(arrayM, leftHead, mid, rightTail);
+		}
+	}
+}

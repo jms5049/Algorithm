@@ -32,3 +32,20 @@
 //
 //}
 //
+//void swap(int *a, int *b) {
+//	int temp;
+//	temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//
+//void bubblesort(int *arrayB, int count) {
+//	for (int i = count; i > 0; i--)
+//	{
+//		for (int j = 1; j < i; j++)
+//		{
+//			if (arrayB[j-1] > arrayB[j])
+//				swap(&arrayB[j], &arrayB[j - 1]);
+//		}
+//	}
+//}

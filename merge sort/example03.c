@@ -86,3 +86,25 @@ void merge(int arraySort[], int left, int mid, int right)
 	}
 
 }
+void insertionSort(int arraySort[], int left, int right) {
+	int i, j;
+	int temp = 0;
+
+	for (i = 1; i <= right; i++) {
+		temp = arraySort[i];
+		for (j = i; j > 0; j--) {
+			if (arraySort[j - 1] > temp) {
+				arraySort[j] = arraySort[j - 1];
+				if (j == 1) {
+					arraySort[j - 1] = temp;
+					break;
+				}
+			}
+			else {
+				arraySort[j] = temp;
+				break;
+			}
+		}
+	}
+
+}

@@ -110,3 +110,57 @@
 //	return max_value;
 //}
 //
+//void max_heapsort(int *A) {
+//	int i = heap_size;
+//	int temp;
+//
+//	build_max_heap(A);
+//	for (i; i > 0; i--) {
+//
+//		temp = A[0];
+//		A[0] = A[i];
+//		A[i] = temp;
+//
+//		heap_size--;
+//		max_heapify(A, 0);
+//	}
+//}
+//
+//void max_heap_increase_key(int *A, int x, int key) {
+//	int temp;
+//	if (key < A[x])	{
+//		printf("new key is smaller than current key");
+//	}
+//	else {
+//		A[x] = key;
+//		while (x > 0 && A[parent(x)] < A[x]) {
+//
+//			temp = A[x];
+//			A[x] = A[parent(x)];
+//			A[parent(x)] = temp;
+//
+//			x = parent(x);
+//		}
+//	}
+//}
+//
+//void max_heap_insert(int *A, int key) {
+//	heap_size++;					
+//	count++;						
+//	A = (int *)realloc(A, sizeof(int)*(count + 1));
+//	A[heap_size] = -INT_MAX;
+//	max_heap_increase_key_no_constraint(A, heap_size, key);
+//}
+//
+//void max_heap_increase_key_no_constraint(int *A, int x, int key) {
+//	int temp;
+//	A[x] = key;
+//		while (x > 0 && A[parent(x)] < A[x]) {
+//
+//			temp = A[x];
+//			A[x] = A[parent(x)];
+//			A[parent(x)] = temp;
+//
+//			x = parent(x);
+//		}
+//}

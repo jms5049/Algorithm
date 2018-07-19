@@ -62,3 +62,51 @@
 //	return 2 * i + 2;
 //}
 //
+//void max_heapify(int *A, int i) {
+//	int l, r,largest;
+//	int temp = 0;
+//	
+//	l = left(i);
+//	r = right(i);
+//	if (l <= heap_size && A[l] > A[i])
+//		largest = l;
+//	else
+//		largest = i;
+//
+//	if (r <= heap_size && A[r] > A[largest])
+//		largest = r;
+//
+//	if (largest != i) {
+//		temp = A[i];
+//		A[i] = A[largest];
+//		A[largest] = temp;
+//
+//		max_heapify(A, largest);
+//	}
+//}
+//
+//void build_max_heap(int *A) {
+//	
+//	int i;
+//	for (i = floor(heap_size / 2); i>-1; i--)
+//		max_heapify(A, i);
+//}
+//
+//int heap_extract_max(int *A) {
+//	int i, max_value,temp;
+//
+//	build_max_heap(A);
+//	i = heap_size;
+//	max_value = A[0];
+//
+//	temp = A[0];
+//	A[0] = A[i];
+//	A[i] = temp;
+//	
+//	heap_size--;
+//	count--;
+//
+//	max_heapify(A, 0);
+//	return max_value;
+//}
+//

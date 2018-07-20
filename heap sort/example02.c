@@ -89,4 +89,33 @@ void build_min_heap(int *A) {
 	for (i = floor(heap_size / 2); i>-1; i--)
 		min_heapify(A, i);
 }
+int heap_extract_min(int *A) {
+	int i, min_value, temp;
 
+	build_min_heap(A);
+
+	i = heap_size;
+	min_value = A[0];
+
+	temp = A[0];
+	A[0] = A[i];
+	A[i] = temp;
+	heap_size--;
+	count--;
+	min_heapify(A, 0);
+	return min_value;
+}
+
+void min_heapsort(int *A) {
+	int i = heap_size;
+	int temp;
+
+	build_min_heap(A);
+	for (i; i > 0; i--) {
+		temp = A[0];
+		A[0] = A[i];
+		A[i] = temp;
+		heap_size--;			
+		min_heapify(A, 0);		
+	}
+}

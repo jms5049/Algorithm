@@ -119,3 +119,41 @@ void min_heapsort(int *A) {
 		min_heapify(A, 0);		
 	}
 }
+void min_heap_decrease_key(int *A, int x, int key) {
+	int temp;
+	if (key >= A[x]) {
+		printf("new key is smaller than current key");
+	}
+	else {
+		A[x] = key;
+		while (x > 0 && A[parent(x)] >= A[x]) {
+
+			temp = A[x];
+			A[x] = A[parent(x)];
+			A[parent(x)] = temp;
+
+			x = parent(x);
+		}
+	}
+}
+
+void min_heap_insert(int *A, int key) {
+	heap_size++;			
+	count++;				
+	A = (int *)realloc(A, sizeof(int)*(count + 1));
+	A[heap_size] = INT_MAX;	
+	min_heap_decrease_key_no_constraint(A, heap_size, key);
+}
+
+void min_heap_decrease_key_no_constraint(int *A, int x, int key) {
+	int temp;
+	A[x] = key;
+	while (x > 0 && A[parent(x)] >= A[x]) {
+		
+		temp = A[x];
+		A[x] = A[parent(x)];
+		A[parent(x)] = temp;
+
+		x = parent(x);
+	}
+}

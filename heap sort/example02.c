@@ -60,4 +60,33 @@ int left(int i) {
 int right(int i) {
 	return 2 * i + 2;
 }
+void min_heapify(int *A, int i) {
+	int l, r, smallest;
+	int temp = 0;
+
+	l = left(i); 
+	r = right(i); 
+	if (l <= heap_size && A[l] <= A[i])
+		smallest = l;
+	else
+		smallest = i;
+
+	if (r <= heap_size && A[r] <= A[smallest])
+		smallest = r;
+
+	if (smallest != i) {
+		temp = A[i];
+		A[i] = A[smallest];
+		A[smallest] = temp;
+
+		min_heapify(A, smallest);
+	}
+}
+
+void build_min_heap(int *A) {
+
+	int i;
+	for (i = floor(heap_size / 2); i>-1; i--)
+		min_heapify(A, i);
+}
 

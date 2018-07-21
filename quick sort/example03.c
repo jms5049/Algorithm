@@ -79,4 +79,33 @@ int partition(int *QuickArray, int p, int r) {
 	return i + 1;
 }
 
+void swap(int *QuickArray, int one, int two) {
+	int temp = 0;
 
+	temp = QuickArray[one];
+	QuickArray[one] = QuickArray[two];
+	QuickArray[two] = temp;
+}
+
+void insertionSort(int *arraySort, int left, int right) {
+	int i, j;
+	int temp = 0;
+
+	for (i = 1; i <= right; i++) {
+		temp = arraySort[i];
+		for (j = i; j > 0; j--) {
+			if (arraySort[j - 1] > temp) {
+				arraySort[j] = arraySort[j - 1];
+				if (j == 1) {
+					arraySort[j - 1] = temp;
+					break;
+				}
+			}
+			else {
+				arraySort[j] = temp;
+				break;
+			}
+		}
+	}
+
+}

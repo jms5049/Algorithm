@@ -39,3 +39,22 @@
 //	return 0;
 //}
 //
+//void quickSort(int *QuickArray, int p, int r) {
+//	int q = 0;
+//
+//	if (p < r) {
+//		q = random(QuickArray, p, r);
+//		quickSort(QuickArray, p, q - 1);
+//		quickSort(QuickArray, q + 1, r);
+//	}
+//}
+//
+//int random(int *QuickArray, int p, int r) {
+//	int i = 0;
+//
+//	i = p + ( rand() % (r - p + 1) );
+//	swap(QuickArray,i, r);
+//
+//	return partition(QuickArray, p, r);
+//}
+//

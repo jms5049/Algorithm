@@ -58,3 +58,30 @@
 //	return partition(QuickArray, p, r);
 //}
 //
+//int partition(int *QuickArray, int p, int r) {
+//	int x;
+//	int i = 0;
+//	int temp;
+//
+//	x = QuickArray[r];
+//
+//	i = p - 1;
+//
+//	for (int j = p; j < r; j++) {
+//		if (QuickArray[j] <= x) {
+//			i = i + 1;
+//			swap(QuickArray,i, j);
+//		}
+//	}
+//	swap(QuickArray,i + 1, r);
+//
+//	return i + 1;
+//}
+//
+//void swap(int *QuickArray, int one, int two) {
+//	int temp = 0;
+//
+//	temp = QuickArray[one];
+//	QuickArray[one] = QuickArray[two];
+//	QuickArray[two] = temp;
+//}

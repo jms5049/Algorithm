@@ -89,3 +89,25 @@
 //		return result;
 //}
 //
+//int findMax(int *A, int k) {
+//	int i;
+//	//int * temp= (int *)malloc(sizeof(int)*k);;
+//	for (i = 1; i < k; ++i)
+//	{
+//		if (A[0] < A[i])
+//			A[0] = A[i];
+//	}
+//	i = A[0];
+//	return i;
+//}
+//
+//int findMin(int *A, int k) {
+//	int i;
+//	for (i = 1; i < k; ++i)
+//	{
+//		if (A[0] > A[i])
+//			A[0] = A[i];
+//	}
+//	i = A[0];
+//	return i;
+//}

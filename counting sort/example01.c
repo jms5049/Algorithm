@@ -48,3 +48,44 @@
 //	free(CountArray);
 //	return 0;
 //}
+//
+//void countingSort(int *A, int *B, int k) {
+//	int i = 0;
+//	int j = 0;
+//	int *C = (int *)malloc(sizeof(int)*(degree));
+//
+//	for (i=0; i < k; i++) {
+//		*(C + i) = 0;
+//	}
+//
+//	for (j = 0; j < count; j++) {
+//		*(C + (A[j])) += 1;
+//	}
+//
+//	for (i = 0; i < k; i++) {
+//		printf("%d 의 개수 %d\n", i,*(C + i));
+//	}
+//	puts("");
+//	
+//	for (i = 1; i < k; i++) {
+//		*(C + i) = *(C + i) + *(C + (i - 1));
+//	}
+//
+//	for (j = count-1; j > -1; j--) {
+//		B[*(C + A[j])-1] = A[j];
+//		*(C + A[j]) -= 1;
+//	}
+//}
+//
+//int findDegree(int *A, int k) {
+//	int result = 0;
+//	result = (findMax(A, k) - findMin(A, k));
+//	if (result < 0)
+//		//에러
+//		return 0;
+//	else
+//		printf("수의 범위 :%d\n", result);
+//		puts("");
+//		return result;
+//}
+//

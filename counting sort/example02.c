@@ -63,4 +63,75 @@ int randomizedSelect(int *A, int p, int r, int i) {
 	else
 		return randomizedSelect(A, q + 1, r, i - k);
 }
+int veryMedianPivot(int *A, int p, int r) {
+	int i = 0, a = 0;
+	int subsize = r - p + 1;
+	int *median = (int*)malloc(sizeof(int)*(subsize / 5 + 1));
 
+	for (a = p; a < r; a += 5) {
+		if ( a + 4 > r) {
+			median[i++] = findmedian(A, a, a + (r % 5));
+		}
+		else {
+			median[i++] = findmedian(A, a, a + 4);
+		}
+	}
+
+	a = findmedian(median, 0, i-1);
+
+	a = findIndexOf(A, a);
+
+	swap(A, a, r);
+	return partition(A, p, r);
+}
+
+int findmedian(int *A, int p, int r) {
+	insertionSort(A, p, r);
+	return A[p + (r - p) / 2];
+}
+
+int findIndexOf(int *A, int a) {
+	for (int i = 0; i < count; i++) {
+		if (a == A[i])
+			return i;
+	}
+}
+
+void insertionSort(int *A, int p, int r) {
+	int i = 0, j = 0, key = 0;
+	for (i = p; i < r; i++) {
+		key = A[i];
+		j = i - 1;
+		while ((j > 0) && (A[j] > key)) {
+			A[j + 1] = A[j];
+			j = j - 1;
+		}
+		A[j + 1] = key;
+	}
+}
+
+int partition(int *QuickArray, int p, int r) {
+	int x;
+	int i = 0;
+	int temp;
+
+	x = QuickArray[r];
+	i = p - 1;
+
+	for (int j = p; j < r; j++) {
+		if (QuickArray[j] <= x) {
+			i = i + 1;
+			swap(QuickArray, i, j);
+		}
+	}
+	swap(QuickArray, i + 1, r);
+
+	return i + 1;
+}
+
+void swap(int *QuickArray, int one, int two) {
+	int temp = 0;
+	temp = QuickArray[one];
+	QuickArray[one] = QuickArray[two];
+	QuickArray[two] = temp;
+}

@@ -50,3 +50,17 @@ int main() {
 
 	return 0;
 }
+int randomizedSelect(int *A, int p, int r, int i) {
+	int q = 0, k = 0;
+	if (p == r)
+		return A[p];
+	q = veryMedianPivot(A, p, r);				
+	k = q - p + 1;
+	if (i == k)
+		return A[q];
+	if (i < k)
+		return randomizedSelect(A, p, q - 1, i);
+	else
+		return randomizedSelect(A, q + 1, r, i - k);
+}
+

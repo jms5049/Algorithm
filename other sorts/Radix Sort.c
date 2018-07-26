@@ -38,3 +38,33 @@
 //
 //	return 0;
 //}
+//
+//void radixSort(int *A, int n) {
+//	int i, j;
+//	int *B, *C;
+//	B = (int *)malloc(sizeof(int) * n);
+//	C = (int *)malloc(sizeof(int) * 256);
+//	for (i = 0; i < 4; i++) {		
+//		for (j = 0; j < 256; j++) {	
+//			C[j] = 0;
+//		}
+//		for (j = 0; j < n; j++) {	
+//			C[bitMasking(A[j], i * 8)]++;
+//		}
+//		for (j = 1; j < 256; j++) {	
+//			C[j] += C[j - 1];
+//		}
+//		for (j = n - 1; j > -1; j--) {	
+//			B[--C[bitMasking(A[j], i * 8)]] = A[j];
+//		}
+//		for (j = 0; j < n; j++) {	
+//			A[j] = B[j];
+//		}
+//	}
+//	free(B);
+//	free(C);
+//}
+//
+//int bitMasking(int x, int k) {
+//	return (x >> k) & ((1 << 8) - 1);	
+//}

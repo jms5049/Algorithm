@@ -53,3 +53,45 @@
 //	return 0;
 //}
 //
+//void bucketSort(float *A)
+//{
+//	NODE* node;
+//	NODE* current;
+//	BUCKET* bucket = (BUCKET*)malloc(sizeof(BUCKET)*count);
+//	int bi = 0, temp = 0;
+//
+//	for (int i = 0; i < count; i++) {
+//		bucket[i].size = 0;
+//		bucket[i].list = NULL;
+//	}
+//
+//	for (int i = 0; i<count; i++)
+//	{
+//		bi = count*A[i];
+//
+//		node = (NODE*)malloc(sizeof(NODE)*count);
+//		node->data = A[i];
+//		node->next = bucket[bi].list;
+//		bucket[bi].list = node;
+//		bucket[bi].size++;
+//	}
+//
+//	for (int i = 0; i < count; i++) {
+//		if (bucket[i].size == 0) {
+//			continue;
+//		}
+//		else if (bucket[i].size == 1) {
+//			A[temp++] = bucket[i].list->data;
+//		}
+//		else {
+//			int begin = temp;
+//			current = bucket[i].list;
+//			while (current != NULL) {
+//				A[temp++] = current->data;
+//				current = current->next;
+//			}
+//			insertionSort(A, begin, temp - 1);
+//		}
+//	}
+//}
+//

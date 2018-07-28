@@ -61,4 +61,27 @@ int main() {
 
 	return 0;
 }
+TREENODE* treeInsertRecursive(TREENODE *T, int z) {
+
+	if (T == NULL)
+	{
+		root = (TREENODE *)malloc(sizeof(TREENODE));
+		root->data = z;
+		root->left = root->right = root->parent = NULL;
+		return root;
+	}
+	
+	if (z > (T->data))
+	{
+		T->right = treeInsertRecursive(T->right, z);
+		T->right->parent = T;
+	}
+	else if (z < (T->data))
+	{
+		T->left = treeInsertRecursive(T->left, z);
+		T->left->parent = T;
+	}
+	return T;
+	
+}
 

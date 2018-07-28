@@ -85,3 +85,50 @@ TREENODE* treeInsertRecursive(TREENODE *T, int z) {
 	
 }
 
+//TREENODE *treeInsertIterative(TREENODE *T, int z) {
+//
+//	if (T == NULL)
+//	{
+//		root = (TREENODE *)malloc(sizeof(TREENODE));
+//		root->data = z;
+//		root->left = root->right = root->parent = NULL;
+//		return root;
+//	}
+//
+//	else
+//	{
+//		while (1)
+//		{	
+//			if (T->data >= z && T->left == NULL)
+//			{
+//				TREENODE *temp;
+//				temp = (TREENODE *)malloc(sizeof(TREENODE));
+//				temp->data = z;
+//				temp->left = temp->right = NULL;
+//				temp->parent = T->left;
+//				T->left = temp;
+//				break;
+//			}
+//			else if (T->data >= z && T->left != NULL)
+//			{
+//				T = T->left;
+//			}
+//			else if (T->data< z && T->right == NULL)
+//			{
+//				TREENODE *temp;
+//				temp = (TREENODE *)malloc(sizeof(TREENODE));
+//				temp->data = z;
+//				temp->left = temp->right = NULL;
+//				temp->parent = T->right;
+//				T->right = temp;
+//				break;
+//			}
+//			else
+//			{
+//				T = T->right;
+//			}
+//		}
+//		return root;
+//	}
+//}
+

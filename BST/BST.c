@@ -132,3 +132,16 @@ TREENODE* treeInsertRecursive(TREENODE *T, int z) {
 //	}
 //}
 
+TREENODE *buildBST(TREENODE *T, int *A, int count) {
+	int i;
+
+	printf("Insert without any sort\n");
+	for (i = 0; i < count; i++) {
+		T = treeInsertRecursive(T, A[i]);
+		printTree(T, count);
+		puts("");
+	}
+	return T;
+}
+
+

@@ -144,4 +144,33 @@ TREENODE *buildBST(TREENODE *T, int *A, int count) {
 	return T;
 }
 
+TREENODE *treeSearchRecursive(TREENODE *T, int k) {
+	if (T == NULL) {
+		printf("Cannot Find Value %d in BST (RECURSIVE)\n", k);
+		return 0;
+	}
+	if (k == T->data) {
+		printf("Found Value %d in BST (RECURSIVE)\n", T->data);
+		return T;
+	}
 
+	if (k < T->data)
+		return treeSearchRecursive(T->left, k);
+	else
+		return treeSearchRecursive(T->right, k);
+}
+
+TREENODE *treeSearchIterative(TREENODE *T, int k) {
+	while (T != NULL && k != T->data) {
+		if (k < T->data)
+			T = T->left;
+		else
+			T = T->right;
+	}
+	if (T == NULL) {
+		printf("Cannot Find Value %d in BST (ITERATIVE)\n", k);
+		return 0;
+	}
+	printf("Found Value %d in BST (ITERATIVE)\n", T->data);
+	return T;
+}

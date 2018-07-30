@@ -174,3 +174,83 @@ TREENODE *treeSearchIterative(TREENODE *T, int k) {
 	printf("Found Value %d in BST (ITERATIVE)\n", T->data);
 	return T;
 }
+TREENODE *treeSuccessor(TREENODE *T) {
+	TREENODE *y;
+	y = (TREENODE *)malloc(sizeof(TREENODE));
+	if (T->right != NULL)
+		printf("Tree Successor = %d\n", treeMin(T->right)->data);
+		return treeMin(T->right);
+
+	y = T->parent;
+	while ( y != NULL && T == y->right) {
+		T = y;
+		y = y->parent;
+	}
+
+	return y;
+}
+
+
+TREENODE *treePredecessor(TREENODE *T) {
+	TREENODE *y;
+	y = (TREENODE *)malloc(sizeof(TREENODE));
+	if (T->left != NULL)
+		printf("Tree Predecessor = %d\n", treeMax(T->left)->data);
+		return treeMax(T->left);
+	y = T->parent;
+	while (y != NULL && T == y->left) {
+		T = y;
+		y = y->parent;
+	}
+
+	return y;
+}
+
+TREENODE *treeMin(TREENODE *T) {
+	while (T->left != NULL)
+		T = T->left;
+	return T;
+}
+TREENODE *treeMax(TREENODE *T) {
+	while (T->right != NULL)
+		T = T->right;
+	return T;
+}
+
+void printTree(TREENODE *T) {
+	if (T == NULL) {
+		return 0;
+	}
+	printTree(T->left);
+	printf("%d ", T->data);
+	printTree(T->right);
+}
+
+
+int findmedian(int *A, int p, int r) {
+	int result;
+	insertionSort(A, p, r);
+	result = A[(int)ceil(p + (r - p) / 2)];
+	A[p + (r - p) / 2] = 999999;
+	swap(A, p + (r - p) / 2, r);
+	return result;
+}
+
+void insertionSort(int *A, int p, int r) {
+	int i = 0, j = 0, key = 0;
+	for (i = p; i < r; i++) {
+		key = A[i];
+		j = i - 1;
+		while ((j >= 0) && (A[j] > key)) {
+			A[j + 1] = A[j];
+			j = j - 1;
+		}
+		A[j + 1] = key;
+	}
+}
+
+void swap(int *A, int p, int r) {
+	int temp = A[p];
+	A[p] = A[r];
+	A[r] = temp;
+}

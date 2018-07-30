@@ -254,3 +254,47 @@ void swap(int *A, int p, int r) {
 	A[p] = A[r];
 	A[r] = temp;
 }
+
+void treeDelete(TREENODE *T, int z) {
+	TREENODE *y;
+	y = (TREENODE *)malloc(sizeof(TREENODE));
+	TREENODE *nodeZ;
+	nodeZ = (TREENODE *)malloc(sizeof(TREENODE));
+
+	nodeZ = treeSearchRecursive(T, z);
+
+	if (nodeZ->left == NULL) {
+		transplant(T, nodeZ, nodeZ->right);
+	}
+	else if(nodeZ->right == NULL) {
+		transplant(T, nodeZ, nodeZ->left);
+	}
+	else {
+		y = treeMin(nodeZ->right);
+		if (y->parent != nodeZ) {
+			transplant(T, y, y->right);
+			y->right = nodeZ->right;
+			y->right->parent = y;
+		}
+		transplant(T, nodeZ, y);
+		y->left = nodeZ->left;
+		y->left->parent = y;
+	}
+}
+
+void transplant(TREENODE *T, TREENODE *u, TREENODE *v) {
+	if (u->parent == NULL) {
+		T->parent = v;
+	}
+	else if (u == u->parent->left) {
+	u->parent->left = v;
+	}
+	else {
+		u->parent->right = v;
+	}
+
+	if (v != NULL) {
+		v->parent = u->parent;
+	}
+
+}

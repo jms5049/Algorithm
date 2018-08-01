@@ -83,6 +83,20 @@ void bfs(int **graph, int vertex) {
 }
 
 
+void dfs(int **graph, int vertex) {
+	
+	int j = 0;
+	visitDFS[vertex] = 1;
+
+	for (int j = 0; j < vertexNo; j++) {
+		if (graph[vertex][j]) {
+			while (visitDFS[j] == 0) {
+				printf("%-3d->  ", j);
+				dfs(graph, j);					
+			}
+		}
+	}
+}
 void addQueue(int i) {
 	if ((rear + 1) % vertexNo == front) {
 		printf("Queue Overflow \n");

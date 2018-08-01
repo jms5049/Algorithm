@@ -56,3 +56,72 @@ int main() {
 	free(graph);
 	return 0;
 }
+
+
+void bfs(int **graph, int vertex) {
+	int *visitBFS = (int*)malloc(sizeof(int*) * vertexNo);
+	int i = 0, j = 0;
+	initQueue();
+	init(visitBFS);
+
+	visitBFS[vertex] = 1;	
+	addQueue(vertex);
+	printf("BFS on ROOT : %d \n" , vertex);	
+	
+	while (!isEmpty()) {
+		i = peekQueue();
+		printf("%-3d->  ", removeQueue());
+		for (j = 0; j < vertexNo; j++) {
+			if (graph[i][j]) {
+				while (visitBFS[j] == 0) {
+					visitBFS[j] = 1;
+					addQueue(j);
+				}
+			}
+		}
+	}
+}
+
+
+void addQueue(int i) {
+	if ((rear + 1) % vertexNo == front) {
+		printf("Queue Overflow \n");
+		return -1;
+	}
+	queue[rear] = i;
+	rear = ++rear % vertexNo;
+}
+
+int removeQueue() {
+	int i;
+	if (front == rear) {
+		printf("Queue Empty\n");
+		return -1;
+	}
+	i = queue[front];
+	front = ++front % vertexNo;
+	return i;
+}
+
+int isEmpty() {
+	if (front == rear) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+int peekQueue() {
+	return queue[front];
+}
+
+void initQueue() {
+	front = rear = 0;
+}
+
+int init(int *A) {
+	for (int i = 0; i < vertexNo; i++) {
+		A[i] = 0;
+	}
+}

@@ -75,7 +75,59 @@
 //	}
 //}
 //
-
+//void prim(int **graph, int root) {
+//	int *parent = (int *)malloc(sizeof(int)*vertexNo);
+//	VERTEX *minheap = (VERTEX *)malloc(sizeof(VERTEX)*vertexNo);
+//	VERTEX V;
+//	int u, totalCost =0;
+//	heapSize = 0;
+//
+//	for (int i = 0; i < vertexNo; i++) {
+//		V.key = INT_MAX;
+//		V.index = i;
+//		parent[i] = -1;
+//		min_heap_insert(minheap, V);
+//	}
+//	min_heap_decrease_key(minheap, root, 0);
+//	while (heapSize > 0) {
+//		u = heap_extract_min(minheap);			
+//		for (int v = 0; v < vertexNo; v++) {
+//			if (graph[u][v] > 0) {
+//				if (find(minheap, v) != -1 && graph[u][v] < getVertex(minheap,v).key) {
+//					parent[v] = u;					
+//					min_heap_decrease_key(minheap, find(minheap, v), graph[u][v]);
+//				}
+//			}
+//		}
+//	}
+//	printf("Prim\n");
+//	printf("Path        Cost\n\n");
+//	for (int i = 0; i < vertexNo; i++) {
+//		if (parent[i] != -1) {
+//			printf("%d   ->%4d%5d\n", parent[i], i, graph[parent[i]][i]);
+//			totalCost += graph[parent[i]][i];
+//		}
+//	}
+//	printf("\nTotal Cost = %d\n\n", totalCost);
+//}
+//
+//int find(VERTEX *A, int v) {
+//	for (int i = 0; i < heapSize; i++) {
+//		if (v == A[i].index) {
+//			return i;
+//		}
+//	}
+//	return -1;
+//}
+//
+//VERTEX getVertex(VERTEX *A, int v) {
+//	for (int i = 0; i < heapSize; i++) {
+//		if (v == A[i].index) {
+//			return A[i];
+//		}
+//	}
+//	return;
+//}
 //
 //void min_heapify(VERTEX *A, int i) {
 //	int l, r, smallest;

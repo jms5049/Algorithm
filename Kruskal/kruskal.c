@@ -71,7 +71,31 @@
 //		}
 //	}
 //}
-
+//
+//void kruskal(int **G, EDGE *w) {
+//	EDGE *mst = (EDGE*)malloc(sizeof(EDGE)*count);
+//	int *parent = (int*)malloc(sizeof(int)*vertexNo);
+//	int size = 0, totalWeight = 0;
+//
+//	for (int i = 0; i < vertexNo; i++) {
+//		parent[i] = -1;
+//	}
+//	sortEdge(w);	
+//
+//	for (int i = 0; i < count; i++) {
+//		if (findSet(parent,w[i].from) != findSet(parent,w[i].to)) {
+//			mst[size++] = w[i];
+//			unionSet(parent, w[i].from, w[i].to);
+//		}
+//	}
+//	printf("Kruskal\n");
+//	printf("\Path        Weight\n\n");
+//	for (int i = 0; i < size; i++) {
+//		printf("%d    ->%5d%5d\n", mst[i].from, mst[i].to, mst[i].weight);
+//		totalWeight += mst[i].weight;
+//	}
+//	printf("\nTotal Weight =%3d\n\n", totalWeight);
+//}
 //
 //void sortEdge(EDGE *E) {
 //	EDGE temp;

@@ -71,4 +71,44 @@
 //		}
 //	}
 //}
+
 //
+//void sortEdge(EDGE *E) {
+//	EDGE temp;
+//	for (int i = 0; i < count-1; i++) {
+//		for (int j = i + 1; j < count; j++) {
+//			if (E[i].weight > E[j].weight) {
+//				temp = E[i];
+//				E[i] = E[j];
+//				E[j] = temp;
+//			}
+//		}
+//	}
+//}
+//
+//int findSet(int* parent, int i) {
+//	int root;
+//	for (root = i; parent[root] >= 0; root = parent[root]) {
+//	}
+//	return root;
+//}
+//
+//void unionSet(int *parent, int i, int j) {
+//	int temp;
+//	int rootA = findSet(parent, i);		
+//	int rootB = findSet(parent, j);		
+//
+//	if (rootA == rootB) {
+//		return;
+//	}
+//
+//	if (parent[rootA] > parent[rootB]) {	
+//		parent[rootA] += parent[rootB];		
+//		parent[rootB] = rootA;				
+//	}
+//	else {
+//		parent[rootB] += parent[rootA];		
+//		parent[rootA] = rootB;				
+//	}
+//		
+//}

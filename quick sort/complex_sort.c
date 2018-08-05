@@ -37,8 +37,8 @@ int main() {
 	for (i = 0; i < count; i++)
 		printf("%d\n", QuickArray[i]);
 
-	printf("»ðÀÔ Á¤·ÄÇÏ´Â ¹è¿­ÀÇ Å©±â : %d °³ ÀÏ¶§\n", subarraySize);
-	printf("Á¤·Ä ½Ã°£ : %f ÃÊ \n", gap);
+	printf("ì‚½ìž… ì •ë ¬í•˜ëŠ” ë°°ì—´ì˜ í¬ê¸° : %d ê°œ ì¼ë•Œ\n", subarraySize);
+	printf("ì •ë ¬ ì‹œê°„ : %f ì´ˆ \n", gap);
 	free(QuickArray);
 	return 0;
 }

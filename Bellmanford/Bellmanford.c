@@ -71,3 +71,15 @@ int main() {
 
 	return 0;
 }
+
+void initGraph(int vertexNo) {
+	graph = (int **)malloc(sizeof(int*) * vertexNo);
+	for (int i = 0; i < vertexNo; i++) {
+		graph[i] = (int *)malloc(sizeof(int) * vertexNo);
+	}
+	for (int i = 0; i < vertexNo; i++) {
+		for (int j = 0; j < vertexNo; j++) {
+			graph[i][j] = 0;
+		}
+	}
+}

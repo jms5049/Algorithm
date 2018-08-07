@@ -118,3 +118,18 @@ int bellmanford(int **graph, EDGE* w, int root) {
 
 	return 1;
 }
+
+void relax(int u, int v, int w) {
+	if (vertexes[v].key > vertexes[u].key + w) {
+		vertexes[v].key = vertexes[u].key + w;
+		vertexes[v].parent = vertexes[u].index;
+	}
+}
+
+void printpath(VERTEX v) {
+	if (v.parent == -1) {
+		return;
+	}
+	printf("<-%2d", v.parent);
+	printpath(vertexes[v.parent]);
+}

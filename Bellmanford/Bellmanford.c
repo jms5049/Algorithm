@@ -83,3 +83,38 @@ void initGraph(int vertexNo) {
 		}
 	}
 }
+
+int bellmanford(int **graph, EDGE* w, int root) {
+	int i = 0, j = 0;
+
+	//initialize single source s
+	vertexes = (VERTEX *)malloc(sizeof(VERTEX));
+
+	for (i = 0; i < vertexNo; i++) {
+		VERTEX v;
+		v.index = i;
+		v.key = 9999;
+		v.parent = -1;
+		vertexes[i] = v;
+	}
+	vertexes[root].key = 0;
+
+	//relax every edges
+	for (i = 0; i < vertexNo; i++) {
+		for (j = 0; j < count; j++) {
+			relax(w[j].from, w[j].to, w[j].weight);
+		}
+	}
+	puts("");
+
+	free(graph);
+
+	//test for solution
+	for (i = 0; i < count; i++) {
+		if (vertexes[w[i].to].key > vertexes[w[i].from].key + w[i].weight) {
+			return 0;
+		}
+	}
+
+	return 1;
+}

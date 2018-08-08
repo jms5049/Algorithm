@@ -80,3 +80,17 @@ int main() {
 
 	return 0;
 }
+
+void initGraph(int vertexNo) {
+	//그래프 메모리 동적할당
+	graph = (int **)malloc(sizeof(int*) * vertexNo);
+	for (int i = 0; i < vertexNo; i++) {
+		graph[i] = (int *)malloc(sizeof(int) * vertexNo);
+	}
+	//그래프의 모든 원소 0으로 초기화
+	for (int i = 0; i < vertexNo; i++) {
+		for (int j = 0; j < vertexNo; j++) {
+			graph[i][j] = 0;
+		}
+	}
+}

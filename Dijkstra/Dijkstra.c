@@ -94,3 +94,28 @@ void initGraph(int vertexNo) {
 		}
 	}
 }
+
+
+void min_heap_decrease_key(VERTEX *A, int x, int key) {
+	VERTEX temp;
+	if (key > A[x].key) {
+		printf("new key is bigger than current key");
+	}
+	else {
+		A[x].key = key;
+		while (x > 0 && A[parent(x)].key > A[x].key) {
+			//부모보다 작으면, 부모랑 자리를 바꾸자
+
+			temp = A[x];
+			A[x] = A[parent(x)];
+			A[parent(x)] = temp;
+
+			x = parent(x);
+		}
+	}
+}
+
+void min_heap_insert(VERTEX *A, VERTEX v) {
+	A[heapSize++]=v;
+	min_heap_decrease_key(A, heapSize-1, v.key);
+}

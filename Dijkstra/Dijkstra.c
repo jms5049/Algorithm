@@ -95,6 +95,55 @@ void initGraph(int vertexNo) {
 	}
 }
 
+void dijkstra(int **graph, EDGE *w, int root) {
+	VERTEX *minheap = (VERTEX *)malloc(sizeof(VERTEX)*vertexNo);
+	VERTEX v;
+	int u, i = 0;
+	vertexes = (VERTEX *)malloc(sizeof(VERTEX));
+	heapSize = 0;
+
+	for (i = 0; i < vertexNo; i++) {
+		//minheap 구조에 모든 정점 초기화 후 삽입
+		v.key = 9999;
+		v.index = i;
+		v.parent = -1;
+		if (i == root) {
+		//시작점의 정점의 값을 0으로 해준다
+			v.key = 0;
+		}
+		min_heap_insert(minheap, v);
+		//min heap 구조에 삽입하여 우선순위 큐를 형성한다
+		vertexes[i] = v;
+	}
+
+	while (heapSize > 0) {
+		u = heap_extract_min(minheap);
+		for (i = 0; i < vertexNo; i++) {
+			if (graph[u][i] > 0) {
+				relax(u, i, graph[u][i], minheap);
+			}
+		}
+	}
+
+	free(graph);
+}
+
+void relax(int u, int v, int w, VERTEX *A) {
+	if (vertexes[v].key > vertexes[u].key + w) {
+		vertexes[v].key = vertexes[u].key + w;
+		vertexes[v].parent = vertexes[u].index;
+		min_heap_decrease_key(A, vertexes[v].index, w);
+	}
+}
+
+void printpath(VERTEX v) {
+	if (v.parent == -1) {
+		return;
+	}
+	printf("<-%2d", v.parent);
+	printpath(vertexes[v.parent]);
+}
+
 void min_heapify(VERTEX *A, int i) {
 	int l, r, smallest;
 	VERTEX temp ;

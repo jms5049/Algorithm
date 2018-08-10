@@ -49,3 +49,31 @@ void initGraph(int vertexNo) {
 	}
 }
 
+int **floyd_Warshall(int **W) {
+	int n;
+	int **D = W;
+
+	int **pastD;
+	pastD = (int **)malloc(sizeof(int*) * vertexNo);
+	for (int i = 0; i < vertexNo; i++) {
+		pastD[i] = (int *)malloc(sizeof(int) * vertexNo);
+	}
+
+	printf("\nFloyd Warshall\n\n");
+	printf("D(0)\n");
+	printMatrix(D);
+
+	for (int k = 1; k < vertexNo; k++) {
+		pastD = D;
+		for (int i = 1; i < vertexNo; i++) {
+			for (int j = 1; j < vertexNo; j++) {
+				if(pastD[i][k] != INT_MAX && pastD[k][j] != INT_MAX)
+					D[i][j] = findmin(pastD[i][j], (pastD[i][k] + pastD[k][j]));
+			}
+		}
+		printf("\nD(%d)\n", (k));
+		printMatrix(D);
+	}
+	return D;
+}
+

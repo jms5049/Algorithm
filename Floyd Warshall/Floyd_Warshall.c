@@ -77,3 +77,25 @@ int **floyd_Warshall(int **W) {
 	return D;
 }
 
+int findmin(int x, int y) {
+	if (x <= y) {
+		return x;
+	}
+	else {
+		return y;
+	}
+}
+
+void printMatrix(int **D) {
+	for (int i = 0; i < vertexNo; i++) {
+		for (int j = 0; j < vertexNo; j++) {
+			if (D[i][j] == INT_MAX) {
+				printf("¡Ä   ");
+			}
+			else {
+				printf("%-5d", D[i][j]);
+			}
+		}
+		puts("");
+	}
+}

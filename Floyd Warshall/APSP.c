@@ -53,3 +53,41 @@
 //	}
 //}
 //
+//int **slow_All_Pairs_Shortest_Paths(int **W) {
+//	int m;
+//	int **L = W;
+//	printf("\nSlow All-Pairs Shortest Paths and Matrix Multiplication\n\n");
+//	printf("L(1)\n");
+//	printMatrix(L);
+//	for (m = 1; m < vertexNo-1; m++) {
+//		L = extend_Shortest_Paths(L, W);
+//		printf("\nL(%d)\n", (m+1));
+//		printMatrix(L);
+//	}
+//	return L;
+//}
+//
+
+//
+//int findmin(int x, int y) {
+//	if (x <= y) {
+//		return x;
+//	}
+//	else {
+//		return y;
+//	}
+//}
+//
+//void printMatrix(int **L) {
+//	for (int i = 0; i < vertexNo; i++) {
+//		for (int j = 0; j < vertexNo; j++) {
+//			if (L[i][j] == INT_MAX) {
+//				printf("¡Ä   ");
+//			}
+//			else {
+//				printf("%-5d", L[i][j]);
+//			}
+//		}
+//		puts("");
+//	}
+//}

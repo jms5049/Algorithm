@@ -67,8 +67,22 @@
 //	return L;
 //}
 //
-
+//int **faster_All_Pairs_Shortest_Paths(int **W) {
+//	int m=1;
+//	int **L = W;
+//	printf("\nFaster All-Pairs Shortest Paths and Matrix Multiplication\n\n");
+//	printf("L(1)\n");
+//	printMatrix(L);
+//	while(m<vertexNo-1) {
+//		L = extend_Shortest_Paths(L, L);
+//		printf("\nL(%d)\n", (m*2));
+//		printMatrix(L);
+//		m *=2;
+//	}
+//	return L;
+//}
 //
+
 //int findmin(int x, int y) {
 //	if (x <= y) {
 //		return x;

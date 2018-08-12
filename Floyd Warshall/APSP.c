@@ -82,7 +82,25 @@
 //	return L;
 //}
 //
-
+//int **extend_Shortest_Paths(int **L, int **W) {
+//	int **L2;
+//	L2 = (int **)malloc(sizeof(int*) * vertexNo);
+//	for (int i = 0; i < vertexNo; i++) {
+//		L2[i] = (int *)malloc(sizeof(int) * vertexNo);
+//	}
+//
+//	for (int i = 0; i < vertexNo; i++) {
+//		for (int j = 0; j < vertexNo; j++) {
+//			L2[i][j] = INT_MAX;
+//			for (int k = 0; k < vertexNo; k++) {
+//				if(L[i][k] != INT_MAX && W[k][j] !=INT_MAX)
+//					L2[i][j] = findmin(L2[i][j], (L[i][k] + W[k][j]));
+//			}
+//		}
+//	}
+//	return L2;
+//}
+//
 //int findmin(int x, int y) {
 //	if (x <= y) {
 //		return x;

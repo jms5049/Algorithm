@@ -63,3 +63,14 @@
 //	printf("\n\ncost: %d\n", m[0][matrixNo - 1]);
 //}
 //
+//void printOptimalParens(int **s, int i, int j) {
+//	if (i == j) {
+//		printf(" %d ", i+1);
+//	}
+//	else {
+//		printf(" ( ");
+//		printOptimalParens(s, i, s[i][j]);
+//		printOptimalParens(s, s[i][j] + 1, j);
+//		printf(" ) ");
+//	}
+//}

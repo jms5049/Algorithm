@@ -80,3 +80,18 @@
 //	puts("");
 //}
 //
+//void printLCS(int **b, char *X, int i, int j) {
+//	if (i == 0 || j == 0) {
+//		return;
+//	}
+//	if (b[i][j] == -1) {
+//		printLCS(b, X, i - 1, j - 1);
+//		printf("%c", X[i-1]);
+//	}
+//	else if (b[i][j] == -2) {
+//		printLCS(b, X, i - 1, j);
+//	}
+//	else {
+//		printLCS(b, X, i, j - 1);
+//	}
+//}

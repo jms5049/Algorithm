@@ -37,3 +37,46 @@
 //
 //}
 //
+//void LCSlength(char *x, char *y) {
+//	int i,j;
+//	int m = xLength;
+//	int n = yLength;
+//
+//	int **b = (int **)malloc(sizeof(int*) * m+1);
+//	int **c = (int **)malloc(sizeof(int*) * m+1);
+//
+//	for (i = 0; i < m+1; i++) {
+//		b[i] = (int *)malloc(sizeof(int) * n+1);
+//		c[i] = (int *)malloc(sizeof(int) * n+1);
+//	}
+//
+
+//	for (i = 1; i < m+1; i++) {
+//		c[i][0] = 0;
+//	}
+//
+//	for (j = 0; j < n+1; j++) {
+//		c[0][j] = 0;
+//	}
+//
+//	for (i = 1; i < m+1; i++) {
+//		for (j = 1; j < n+1; j++) {
+//			if (x[i-1] == y[j-1]) {
+//				c[i][j] = c[i - 1][j - 1] + 1;
+//				b[i][j] = -1;					
+//			}
+//			else if(c[i-1][j]>=c[i][j-1]){
+//				c[i][j] = c[i - 1][j];
+//				b[i][j] = -2;					
+//			}
+//			else {
+//				c[i][j] = c[i][j - 1];
+//				b[i][j] = -3;					
+//			}
+//		}
+//	}
+//
+//	printLCS(b, x, m, n);
+//	puts("");
+//}
+//

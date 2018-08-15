@@ -42,3 +42,39 @@
 //	return 0;
 //}
 //
+//void OBST(float *p, float *q, int n) {
+//	int i, j, l, r;
+//	float t;
+//	float **e = (float **)malloc(sizeof(float*) * n + 1);
+//	float **w = (float **)malloc(sizeof(float*) * n + 1);
+//	int **root = (int **)malloc(sizeof(int*) * n + 1);
+//	
+//	for (i = 1; i <= n + 1; i++) {
+//		e[i] = (float *)malloc(sizeof(float) * n + 1);
+//		w[i] = (float *)malloc(sizeof(float) * n + 1);
+//	}
+//	for (i = 1; i <= n; i++) {
+//		root[i] = (int *)malloc(sizeof(int) * n + 1);
+//	}
+//	for (i = 1; i <= n+1; i++) {
+//		e[i][i-1] = q[i-1];
+//		w[i][i-1] = q[i-1];
+//	}
+//	
+//	for (l = 1; l <= n; l++) {
+//		for (i = 1; i <= n - l+1; i++) {
+//			j = i + l - 1;
+//			e[i][j] = FLT_MAX;
+//			w[i][j] = w[i][j - 1] + p[j] + q[j];
+//			for (r = i; r <= j; r++) {
+//				t = e[i][r-1] + e[r+1][j] + w[i][j];
+//				if (t < e[i][j]) {
+//					e[i][j] = t;
+//					root[i][j] = r;
+//				}
+//			}
+//		}
+//	}
+//
+//	
+//}

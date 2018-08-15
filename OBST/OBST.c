@@ -75,6 +75,43 @@
 //			}
 //		}
 //	}
+//	printf("TABLE E:\n");
+//	for (i = 1; i <= n; i++) {
+//		for (j = 0; j <= n; j++) {
+//			if (e[i][j] < 0) {
+//				printf("---   ");
+//			}
+//			else {
+//				printf("%.2f  ", e[i][j]);
+//			}
+//		}
+//		puts("");
+//	}
 //
+//	printf("\nTABLE W:\n");
+//	for (i = 1; i <= n; i++) {
+//		for (j = 0; j <= n; j++) {
+//			if (w[i][j] < 0) {
+//				printf("---   ");
+//			}
+//			else {
+//				printf("%.2f  ", w[i][j]);
+//			}
+//		}
+//		puts("");
+//	}
+//
+//	printf("\nTABLE ROOT:\n");
+//	for (i = 1; i <= n; i++) {
+//		for (j = 1; j <= n; j++) {
+//			if (root[i][j] < 0) {
+//				printf("- ");
+//			}
+//			else {
+//				printf("%-2d", root[i][j]);
+//			}
+//		}
+//		puts("");
+//	}
 //	
 //}

@@ -4,7 +4,18 @@
 //#include <stdlib.h>
 //
 //
-
+//typedef struct rod {
+//	int length;
+//	int cost;
+//}ROD;
+//
+//typedef struct pair {
+//	int length;
+//	int length2;
+//}PAIR;
+//
+//int rodSize;
+//PAIR pair;
 //int cutRod(ROD* p, int n);
 //int cutRodAux(ROD *p, int n, int *r);
 //ROD* extendedBottomUpCutRod(ROD *p, int n);

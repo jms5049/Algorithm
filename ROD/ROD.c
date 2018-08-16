@@ -48,3 +48,23 @@
 //	return 0;
 //}
 //
+//int cutRod(ROD *p, int n) {
+//	int q;
+//	printf("Recursive Cut Rod\n");
+//	int *r = (int *)malloc(sizeof(int) * (n + 1));
+//	for (int i = 0; i <= n; i++) {
+//		r[i] = -INT_MAX;
+//	}
+//	
+//	q = cutRodAux(p, n, r);
+//	if (pair.length2 != 0) {
+//		printf("Cutting Length : %d  %d\n", pair.length, pair.length2);
+//		printf("Price : %d ( %d  %d )\n", q, r[pair.length], r[pair.length2]);
+//	}
+//	else {
+//		printf("Cutting Length : %d\n", pair.length);
+//		printf("Price : %d ( %d )\n", q, r[pair.length]);
+//	}
+//	return q;
+//}
+//

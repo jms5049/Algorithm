@@ -68,3 +68,29 @@
 //	return q;
 //}
 //
+//int cutRodAux(ROD *p, int n, int *r) {
+//	int q;
+//	int length = 0, length2 = 0;
+//
+//	if (r[n] >= 0) {
+//		return r[n];
+//	}
+//	if (n == 0)
+//		q = 0;
+//	else {
+//		q = -INT_MAX;
+//		for (int i = 1; i <= n; i++) {
+//			if (q < findmax(q, p[i - 1].cost + cutRodAux(p, n - i, r))) {
+//				q = findmax(q, p[i - 1].cost + cutRodAux(p, n - i, r));
+//				length = i;
+//				length2 = n - i;
+//			}
+//		}
+//	}
+//	r[n] = q;
+//	pair.length = length;
+//	pair.length2 = length2;
+//	return q;
+//}
+//
+//

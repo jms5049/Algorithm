@@ -117,3 +117,34 @@
 //	return r;
 //}
 //
+//void printCutRodSolution(ROD *p, int n) {
+//	ROD *r = (ROD *)malloc(sizeof(ROD) * (n + 1));
+//	int result[10];
+//	int k = 0, temp = 0;
+//	r = extendedBottomUpCutRod(p, n);
+//
+//	printf("Bottom Up Cut Rod\n");
+//	printf("Cutting Length : ");
+//	temp = n;
+//	while (n > 0) {
+//		printf("%d  ", r[n].length);
+//		result[k] = r[r[n].length].cost;
+//		n = n - r[n].length;
+//		k++;
+//	}
+//
+//	printf("\nPrice : %d (", r[temp].cost);
+//	for (int i = 0; i < k; i++) {
+//		printf(" %d ", result[i]);
+//	}
+//	printf(")\n");
+//}
+//
+//int findmax(int x, int y) {
+//	if (x >= y) {
+//		return x;
+//	}
+//	else {
+//		return y;
+//	}
+//}

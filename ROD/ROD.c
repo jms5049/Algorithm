@@ -94,3 +94,26 @@
 //}
 //
 //
+//ROD* extendedBottomUpCutRod(ROD *p, int n) {
+//	ROD *r = (ROD *)malloc(sizeof(ROD) * (n + 1));
+//	int i, j, q;
+//
+//
+//	r[0].cost = 0;
+//	r[0].length = 0;
+//
+//	for (j = 1; j <= n; j++) {
+//		q = -INT_MAX;
+//		for (i = 1; i <= j; i++) {
+//			if (q < p[i-1].cost + r[j - i].cost) {
+//				q = p[i-1].cost + r[j - i].cost;
+//				r[j].length = i;
+//			}
+//		}
+//		r[j].cost = q;
+//	}
+//
+//
+//	return r;
+//}
+//
